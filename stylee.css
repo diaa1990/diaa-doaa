@@ -189,10 +189,15 @@ header h1 {
     .time-box {
         padding: 6px 8px;
         min-width: 38px;
-    }
-    .panner-image{
-    width: calc(240px * var(--base-scale)); /* قطر الصورة 120px */
-    height: calc(240px * var(--base-scale));
 
     }
-}
+    
+    .panner-img{
+    width: 80%;
+    height:10%;
+    margin: 3em;
+   
+    object-fit: cover;
+   
+
+    }
