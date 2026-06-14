@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Amiri&family=Parisienne&display=swap');
 
 :root {
-    /* تم تصغير القياسات الأساسية هنا لتشكل 50% من الحجم القديم */
+    /* مقياس الحجم المصغر الذي اخترته بنسبة 50% */
     --base-scale: 0.5; 
 }
 
@@ -17,63 +17,62 @@ body {
     align-items: center;
     min-height: 100vh;
     box-sizing: border-box;
-    overflow-x: hidden; /* منع التمرير الأفقي تماماً */
+    overflow-x: hidden; /* منع التمرير الأفقي تماماً على الشاشات الصغيرة */
 }
 
-/* رأس الصفحة - مصغر ومتجاوب */
+/* رأس الصفحة - متجاوب */
 header {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 15px;
     width: 100%;
 }
 
 header h1 {
     font-family: 'Parisienne', cursive;
-    font-size: calc(15rem * var(--base-scale)); /* تصغير بنسبة 50% */
+    font-size: calc(5rem * var(--base-scale)); 
     color: #d4af37; 
     margin: 0;
     font-weight: normal;
 }
 
-/* قسم الأسماء والصورة - مرن ومتجاوب بنسبة 100% */
+/* قسم الأسماء والصورة - مرن ويتكيف مع الشاشات */
 .wedding-couple {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    max-width: 500px; /* تحديد العرض الأقصى ليتناسب مع الحجم المصغر */
-    margin: 30px auto;
-    padding: 0 15px;
+    max-width: 500px; 
+    margin: 25px auto;
+    padding: 0 10px;
     box-sizing: border-box;
 }
 
 .name {
-    font-size: calc(6rem * var(--base-scale)); /* تصغير بنسبة 50% */
+    font-size: calc(3rem * var(--base-scale)); 
     font-weight: bold;
     color: #4a4a4a;
-  font-family: "Outfit", sans-serif;
-  
-    letter-spacing:3px;
-    white-space: nowrap;
+    font-family: 'Amiri', serif;
+    letter-spacing: 1px;
 }
 
-/* الترتيب على الشاشات الكبيرة */
-.left-name { order: 1; }
+/* الترتيب الافتراضي للشاشات الكبيرة والتابلت */
+.left-name { order: 1; text-align: left; }
 .couple-img-container { order: 2; text-align: center; }
-.right-name { order: 3; }
+.right-name { order: 3; text-align: right; }
 
 .couple-img {
-    width: calc(200px * var(--base-scale)); /* تصغير قطر الصورة إلى 120px */
-    height: calc(200px * var(--base-scale));
+    width: calc(240px * var(--base-scale)); /* قطر الصورة 120px */
+    height: calc(240px * var(--base-scale));
     border-radius: 50%;
-    padding:5px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-/* قسم العداد التنازلي المصغر */
+/* قسم العداد التنازلي */
 .countdown-section {
     text-align: center;
     margin-top: 10px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     width: 100%;
 }
 
@@ -85,22 +84,22 @@ header h1 {
 
 .countdown-container {
     display: flex;
-    gap: 10px;
+    gap: 8px;
     justify-content: center;
-    flex-wrap: wrap; /* يمنع انضغاط المربعات في الشاشات الصغيرة جداً */
+    flex-wrap: wrap; /* يمنع انضغاط المربعات إذا كانت الشاشة ضيقة جداً */
 }
 
 .time-box {
     background: #fdfbf7;
     border: 1px solid #e2d1b5;
-    padding: 10px 12px; /* تقليص الحشو الداخلي */
+    padding: 8px 10px; 
     border-radius: 6px;
-    min-width: 45px;
+    min-width: 42px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 .time-number {
-    font-size: calc(3.5rem * var(--base-scale)); /* تصغير الأرقام */
+    font-size: calc(3.5rem * var(--base-scale)); 
     font-weight: bold;
     color: #d4af37;
     display: block;
@@ -117,34 +116,23 @@ header h1 {
 /* قسم التقويم المصغر */
 .calendar-section {
     text-align: center;
-    margin: 20px auto;
-    font-family: 'Amiri', serif;
+    margin: 15px auto;
     background: #ffffff;
-    padding: 15px;
+    padding: 12px;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-    max-width: 220px; /* تصغير عرض التقويم الإجمالي */
+    max-width: 220px; 
     width: 100%;
     box-sizing: border-box;
 }
 
-.calendar-title {
-    font-size: calc(1.8rem * var(--base-scale));
-    color: #4a4a4a;
-    margin-bottom: 2px;
-}
-
-.calendar-year {
-    font-size: calc(1.2rem * var(--base-scale));
-    color: #d4af37;
-    margin-bottom: 10px;
-    font-weight: bold;
-}
+.calendar-title { font-size: calc(1.8rem * var(--base-scale)); color: #4a4a4a; }
+.calendar-year { font-size: calc(1.2rem * var(--base-scale)); color: #d4af37; margin-bottom: 8px; font-weight: bold; }
 
 .calendar-grid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    gap: 5px;
+    gap: 4px;
     text-align: center;
 }
 
@@ -152,32 +140,26 @@ header h1 {
     font-weight: bold;
     color: #666;
     font-size: calc(0.9rem * var(--base-scale));
-    padding-bottom: 5px;
+    padding-bottom: 4px;
     border-bottom: 1px solid #eee;
 }
 
 .day-number {
     font-size: calc(1.2rem * var(--base-scale));
     color: #333;
-    padding: 4px 0;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    height: 22px;
+    height: 20px;
 }
 
-/* دائرة الطباشير المصغرة بدقة */
-.chalk-circle {
-    color: #d93838;
-    font-weight: bold;
-}
-
+.chalk-circle { color: #d93838; font-weight: bold; }
 .chalk-circle::after {
     content: "";
     position: absolute;
-    width: 24px; /* تم تصغير الدائرة لتناسب الرقم الجديد */
-    height: 24px;
+    width: 22px; 
+    height: 22px;
     border: 2px solid #d93838;
     border-radius: 50% 48% 52% 49% / 49% 52% 48% 51%;
     top: 50%;
@@ -187,13 +169,25 @@ header h1 {
     opacity: 0.85;
 }
 
-/* شاشات الهواتف الذكية (الصغيرة جداً عمودياً) */
-@media (max-width: 480px) {
+/* 📱 قواعد خاصة بشاشات الهواتف المحمولة (أصغر من 600 بكسل) 📱 */
+@media (max-width: 600px) {
     .wedding-couple {
-        flex-direction: column; /* ترتيب العناصر تحت بعضها بسلاسة فقط عند صغر الشاشة الشديد */
+        flex-direction: column; /* تحويل التوزيع من أفقي إلى عمودي ليناسب الجوال */
         gap: 15px;
+        margin: 15px auto;
     }
-    .left-name, .right-name {
-        order: unset;
+    
+    /* إعادة ترتيب العناصر عمودياً: الاسم الأول، ثم الصورة، ثم الاسم الثاني */
+    .left-name { order: 1; text-align: center; }
+    .couple-img-container { order: 2; }
+    .right-name { order: 3; text-align: center; }
+    
+    /* تصغير طفيف إضافي للخطوط على الجوال لضمان عدم وجود تداخل */
+    header h1 { font-size: 2.2rem; }
+    .name { font-size: 1.4rem; }
+    
+    .time-box {
+        padding: 6px 8px;
+        min-width: 38px;
     }
 }
