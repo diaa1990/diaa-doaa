@@ -65,6 +65,8 @@ header h1 {
     height: calc(240px * var(--base-scale));
     border-radius: 50%;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        padding:auto ;
+
 }
 
 /* قسم العداد التنازلي */
