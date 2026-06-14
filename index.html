@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حفل زفاف ضياء ودعاء</title>
+      <link rel="stylesheet" href="stylee.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+      
+    
+</head>
+<body>
+    <div >
+            <!-- استبدل الرابط أدناه برابط صورتك الحقيقية لاحقاً -->
+            <img src="panner1.png" alt="Wedding" >
+        </div>
+
+    <!-- رأس الصفحة -->
+    <header>
+        <h1>Wedding Time </h1>
+    </header>
+    
+
+    <!-- قسم الأسماء والصورة -->
+    <main class="wedding-couple">
+        <!-- اسم DOAA في أقصى اليسار -->
+        <div class="name left-name">DOAA</div>
+
+        
+        
+        <!-- صورة العريس والعروس في الوسط -->
+        <div class="couple-img-container">
+            <!-- استبدل الرابط أدناه برابط صورتك الحقيقية لاحقاً -->
+            <img src="wedding-panner.png" alt="Wedding" class="couple-img">
+        </div>
+        
+        <!-- اسم DIAA في أقصى اليمين -->
+        <div class="name right-name">DIAA</div>
+    </main>
+    <!-- قسم التقويم المحدث لكود -->
+<section class="calendar-section">
+    <div class="calendar-title">تموز</div>
+    <div class="calendar-year">2026</div>
+    
+    <div class="calendar-grid">
+        <!-- أسماء الأيام بدءاً من السبت -->
+        <div class="day-name">سبت</div>
+        <div class="day-name">أحد</div>
+        <div class="day-name">إثنين</div>
+        <div class="day-name">ثلاثاء</div>
+        <div class="day-name">أربعاء</div>
+        <div class="day-name">خميس</div>
+        <div class="day-name">جمعة</div>
+
+        <!-- فراغات الأيام قبل بداية الشهر (شهر تموز 2026 يبدأ يوم الأربعاء) -->
+        <div class="day-number"></div> <!-- السبت -->
+        <div class="day-number"></div> <!-- الأحد -->
+        <div class="day-number"></div> <!-- الإثنين -->
+        <div class="day-number"></div> <!-- الثلاثاء -->
+        
+        <!-- أيام الشهر -->
+        <div class="day-number">1</div>
+        <div class="day-number">2</div>
+        <div class="day-number">3</div>
+        <div class="day-number">4</div>
+        
+        <!-- اليوم الخامس ومحاط بدائرة الطباشير الحمراء -->
+        <div class="day-number chalk-circle">5</div>
+        
+        <div class="day-number">6</div>
+        <div class="day-number">7</div>
+        <div class="day-number">8</div>
+        <div class="day-number">9</div>
+        <div class="day-number">10</div>
+        <div class="day-number">11</div>
+        <div class="day-number">12</div>
+        <div class="day-number">13</div>
+        <div class="day-number">14</div>
+        <div class="day-number">15</div>
+        <div class="day-number">16</div>
+        <div class="day-number">17</div>
+        <div class="day-number">18</div>
+        <div class="day-number">19</div>
+        <div class="day-number">20</div>
+        <div class="day-number">21</div>
+        <div class="day-number">22</div>
+        <div class="day-number">23</div>
+        <div class="day-number">24</div>
+        <div class="day-number">25</div>
+        <div class="day-number">26</div>
+        <div class="day-number">27</div>
+        <div class="day-number">28</div>
+        <div class="day-number">29</div>
+        <div class="day-number">30</div>
+        <div class="day-number">31</div>
+    </div>
+</section>
+
+    <!-- قسم المؤقت التنازلي الكبير والواضح -->
+    <section class="countdown-section">
+        <div class="countdown-title">المتبقي على الحفل الكبير</div>
+        <div class="countdown-container">
+            <div class="time-box">
+                <span class="time-number" id="days">10</span>
+                <span class="time-label">أيام</span>
+            </div>
+            <div class="time-box">
+                <span class="time-number" id="hours">00</span>
+                <span class="time-label">ساعة</span>
+            </div>
+            <div class="time-box">
+                <span class="time-number" id="minutes">00</span>
+                <span class="time-label">دقيقة</span>
+            </div>
+            <div class="time-box">
+                <span class="time-number" id="seconds">00</span>
+                <span class="time-label">ثانية</span>
+            </div>
+        </div>
+        <div >
+            <!-- استبدل الرابط أدناه برابط صورتك الحقيقية لاحقاً -->
+            <img src="panner2.png" alt="Wedding" >
+        </div>
+    <script>
+    // 1. حدد تاريخ وقت الحفل الحقيقي والثابت هنا (السنة، الشهر "بدءاً من 0"، اليوم، الساعة، الدقائق)
+    // تنبيه: الأشهر في الجافاسكربت تبدأ من 0 (أي يناير=0، فبراير=1 ... وتموز/يوليو = 6)
+    const weddingDate = new Date(2026, 6, 5, 20, 0, 0).getTime(); 
+
+    function updateCountdown() {
+        // جلب الوقت الحالي الحقيقي في لحظة فتح أو تحديث الصفحة
+        const now = new Date().getTime();
+        
+        // حساب الفارق الزمني بين الوقت الحالي ووقت الحفل بالملي ثانية
+        const difference = weddingDate - now;
+
+        // حسابات الوقت للأيام، الساعات، الدقائق، والثواني
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+        // إذا كان التاريخ في المستقبل، اعرض العداد الحقيقي المتناقص
+        if (difference > 0) {
+            document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+            document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+            document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+        } else {
+            // إذا حان وقت الحفل أو مر عليه زمن
+            clearInterval(countdownInterval);
+            document.getElementById("days").innerText = "00";
+            document.getElementById("hours").innerText = "00";
+            document.getElementById("minutes").innerText = "00";
+            document.getElementById("seconds").innerText = "00";
+            
+            // تغيير النص العلوي للعداد ليوضح أن الفرح بدأ
+            document.querySelector(".countdown-title").innerHTML = "<strong style='color:#d4af37; font-size:1.2rem;'>بدأ الحفل الآن! مبارك للعروسين DIAA & DOAA 🎉</strong>";
+        }
+    }
+
+    // تحديث العداد تلقائياً كل ثانية واحدة بدون إعادة تصفير
+    const countdownInterval = setInterval(updateCountdown, 1000);
+    
+    // تشغيل الدالة فوراً عند تحميل الصفحة لمنع ظهور أرقام صفيرية مؤقتة
+    updateCountdown();
+</script>
+
+</body>
+</html>

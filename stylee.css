@@ -1,0 +1,199 @@
+/* جلب الخطوط */
+@import url('https://fonts.googleapis.com/css2?family=Amiri&family=Parisienne&display=swap');
+
+:root {
+    /* تم تصغير القياسات الأساسية هنا لتشكل 50% من الحجم القديم */
+    --base-scale: 0.5; 
+}
+
+body {
+    background-color: #ffffff; /* خلفية بيضاء */
+    color: #333333;
+    font-family: 'Amiri', serif;
+    margin: 0;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+    overflow-x: hidden; /* منع التمرير الأفقي تماماً */
+}
+
+/* رأس الصفحة - مصغر ومتجاوب */
+header {
+    text-align: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+header h1 {
+    font-family: 'Parisienne', cursive;
+    font-size: calc(15rem * var(--base-scale)); /* تصغير بنسبة 50% */
+    color: #d4af37; 
+    margin: 0;
+    font-weight: normal;
+}
+
+/* قسم الأسماء والصورة - مرن ومتجاوب بنسبة 100% */
+.wedding-couple {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 500px; /* تحديد العرض الأقصى ليتناسب مع الحجم المصغر */
+    margin: 30px auto;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+.name {
+    font-size: calc(6rem * var(--base-scale)); /* تصغير بنسبة 50% */
+    font-weight: bold;
+    color: #4a4a4a;
+  font-family: "Outfit", sans-serif;
+  
+    letter-spacing:3px;
+    white-space: nowrap;
+}
+
+/* الترتيب على الشاشات الكبيرة */
+.left-name { order: 1; }
+.couple-img-container { order: 2; text-align: center; }
+.right-name { order: 3; }
+
+.couple-img {
+    width: calc(200px * var(--base-scale)); /* تصغير قطر الصورة إلى 120px */
+    height: calc(200px * var(--base-scale));
+    border-radius: 50%;
+    padding:5px;
+}
+
+/* قسم العداد التنازلي المصغر */
+.countdown-section {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+.countdown-title {
+    font-size: calc(1.5rem * var(--base-scale));
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.countdown-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap; /* يمنع انضغاط المربعات في الشاشات الصغيرة جداً */
+}
+
+.time-box {
+    background: #fdfbf7;
+    border: 1px solid #e2d1b5;
+    padding: 10px 12px; /* تقليص الحشو الداخلي */
+    border-radius: 6px;
+    min-width: 45px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.time-number {
+    font-size: calc(3.5rem * var(--base-scale)); /* تصغير الأرقام */
+    font-weight: bold;
+    color: #d4af37;
+    display: block;
+    line-height: 1;
+}
+
+.time-label {
+    font-size: calc(1rem * var(--base-scale));
+    color: #666;
+    margin-top: 3px;
+    display: block;
+}
+
+/* قسم التقويم المصغر */
+.calendar-section {
+    text-align: center;
+    margin: 20px auto;
+    font-family: 'Amiri', serif;
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    max-width: 220px; /* تصغير عرض التقويم الإجمالي */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.calendar-title {
+    font-size: calc(1.8rem * var(--base-scale));
+    color: #4a4a4a;
+    margin-bottom: 2px;
+}
+
+.calendar-year {
+    font-size: calc(1.2rem * var(--base-scale));
+    color: #d4af37;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    text-align: center;
+}
+
+.day-name {
+    font-weight: bold;
+    color: #666;
+    font-size: calc(0.9rem * var(--base-scale));
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eee;
+}
+
+.day-number {
+    font-size: calc(1.2rem * var(--base-scale));
+    color: #333;
+    padding: 4px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 22px;
+}
+
+/* دائرة الطباشير المصغرة بدقة */
+.chalk-circle {
+    color: #d93838;
+    font-weight: bold;
+}
+
+.chalk-circle::after {
+    content: "";
+    position: absolute;
+    width: 24px; /* تم تصغير الدائرة لتناسب الرقم الجديد */
+    height: 24px;
+    border: 2px solid #d93838;
+    border-radius: 50% 48% 52% 49% / 49% 52% 48% 51%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-5deg);
+    filter: drop-shadow(0px 0px 1px #d93838);
+    opacity: 0.85;
+}
+
+/* شاشات الهواتف الذكية (الصغيرة جداً عمودياً) */
+@media (max-width: 480px) {
+    .wedding-couple {
+        flex-direction: column; /* ترتيب العناصر تحت بعضها بسلاسة فقط عند صغر الشاشة الشديد */
+        gap: 15px;
+    }
+    .left-name, .right-name {
+        order: unset;
+    }
+}
