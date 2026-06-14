@@ -193,7 +193,6 @@ header h1 {
     .panner-image{
     width: calc(240px * var(--base-scale)); /* قطر الصورة 120px */
     height: calc(240px * var(--base-scale));
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1)
 
     }
 }
